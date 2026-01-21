@@ -2,6 +2,18 @@
 
 name: aca-tf-java-demo
 
+metadata:
+  template: aca-tf-java-demo
+
 infra:
   provider: terraform
   path: ./infra
+
+services:
+  backend:
+    project: ./src/backend
+    language: java
+    host: containerapp
+    docker:
+      path: ./Dockerfile
+      context: .
